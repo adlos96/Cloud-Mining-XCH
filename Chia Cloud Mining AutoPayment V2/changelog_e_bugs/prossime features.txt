@@ -1,0 +1,33 @@
+﻿DA NON DIMENTICARE
+- creare un file all'interno della cartella contenente il file .cmd "autoPayment", con il percorso del database creato da Csharp
+
+
+
+Client:
+- Implementare la connessione tra client e server
+- implementare metodo di autenticazione ed associazione client al database transazioni relativo al client
+- Implementare il client funzionante comunicando con i 4 dati che abbiamo
+- Rielaborare l'interfaccia grafica di conseguenza
+
+----------------------
+- Implemetare "l'acquisto" del contratto di mining direttamente da client
+- Pagamenti in USDT (cripto)
+- implementazione controllo dati inviati dal client
+- Implementare controllo dell'avvenuta transazione (USDT) e controllo ricezione
+
+Importanti rilascio parziale:
+- Controllare il timer di attesa 24h, tale valore deve "aggiornarsi" in base al numero di pagamenti
+- Creare file log per le transazioni di ogni cliente (Tale file può essere uasto anche come dato per il client)
+
+
+Aggiunte:
+- Separare i percorsi in un nuovo Form Chiamato percorsi... più carino a verdersi
+- Tentare la creazione del file log direttamente dal sofwtare in c#
+- Tentare la creazione del corpo dell'email tramite software in c#
+
+
+- Distinzione tra client e server "TPC-IP"
+- Interfaccia grafica client
+
+***
+- Piccolo grafico andamento Clieti / acquisti

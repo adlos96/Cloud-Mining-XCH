@@ -1,0 +1,1 @@
+﻿- Id database, il numero 10 viene incolonnato sotto il primo contatto, scommento anche il 20 esimo contatto andrà sotto il decimo

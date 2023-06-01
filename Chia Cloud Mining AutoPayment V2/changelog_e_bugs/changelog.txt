@@ -1,0 +1,161 @@
+﻿Versione 1.2.13 {2023-05-17}
+- [Aggiunto] Possibilità di applicare il rendimento manuale anche se il programma non lo permette...
+- [Corretto] Corretta struttura database - Non è più compatibile con le vecchie versioni
+
+:::: Server 0.01.13 Client 0.00.24 {2023-04-15} ::::
+*** Client *** Server ***
+- [Aggiunto] Test comunicazione client --> server --> client
+
+Versione 1.2.08 {2023-05-01}
+- [Aggiunto] Funzione capitale_Depositato() , Mostra sa somma dei depositi totali effettuati
+- [Aggiunto] Funzione accredito() , Mostra la somma dei crediti che il programma deve ancora pagare
+- [Aggiunto] Funzione rendimento() , Calcola la redita giornagliera dell'utente se le condizioni vengono rispettate
+- [Aggiunto] Limite abilitazione rendimento impostato a [15'000€ -> 25'000€]
+- [Aggiunto] Possibilità di cambiare wallet dalle impostazioni
+- [Aggiunto] Possibilità di cambiare codice per auto-mail da impostazioni
+- [Aggiunto] Test button temporaneo
+- [Corretto] Aggiornamento database e transazioni in modo corretto
+- [Corretto] 
+- [Mast]	 Programma completo.... [ 1(100%) 2(3%) 3(3%) ]
+
+Versione 1.2.04 {2023-04-26}
+- [Aggiunto] Stampa data ed ora corrente quando viene effettuata la transazione.
+- [Aggiunto] Timer formato Text e pulsante "Clear" per pulire i log
+
+Versione 1.2.03 {2023-04-26}
+- [Aggiunto] Somma totale del capitale depositato dagli utenti
+- [Aggiunto] L'importo totale che il programma deve ancora pagare agli utenti
+- [Aggiunto] Funzione per il calcolo del capitale_Depositato da tutti gli utenti
+- [Aggiunto] Funzione per il calcolo dell'accredito totale che il programma deve ancora pagare
+- [Aggiunto] Funzione "vuota" per il calcolo del rendimento annuale dal capitale depositato [Minimo: 1250€]
+- [Dati]	 Rendimento annuale massimo [APY: 2%]
+- [Dati]	 Modificato il tempo d'attesa  da [30 min --> 24h]
+
+Versione 1.2.00 {2023-04-21}
+- [Corretto] Bug nelle impostazioni il percorso che veniva salvato nel file era incompleto
+- [Corretto] Bug il quale salvava un'importo errato di xch da inviare
+- [Corretto] Ripristinio impostazioni semplicemente caricando e salvando le impostazioni senza modificare i parametri
+
+Versione 1.1.99 {2023-04-20}
+- [Controllo] Controllo e pulizia codice
+- [OFF] Disabilitato timer 24h --> 30 min
+
+Versione 1.1.68 {2023-04-17}
+- [Aggiunto] Aggiunto totale xch nel form trasazioni
+- [Aggiunto] Totale xch ricevuti dall'utente aggiornato in tempo reale
+- [Corretto] Bug visimo notazione scientifica corretto
+- [Dati]	 Dato transazioni impostato a [*/10 --> */10000] per evitare la scrittura in notazione scientifica
+- [Dati]	 Diminuito l'importo minimo dell'investimento [21€ --> 1€]
+
+Versione 1.1.62 {2023-04-16}
+- [Aggiunto] Se premuto "Load Payment" il bottone si disattiva, riattivandosi a fine ciclo. refresh manuale in caso di errore e bottone disattivato.
+- [Aggiunto] Separazione progetto Server / Client indipendenti
+- [Corretto] Tempo d'attesa che viene ricalcolato per rispettare le 24h ... contante tempo cliente 200 ms
+- [Corretto] Caricamento errato del valore di chia prima dell'effettiva esecuzione del pagamento, il prezzo rimaneva costante
+- [Aggiunto] Campo nel database transazioni contenente il prezzo di chia nella transazione effettuata
+
+Versione 1.0.50 {2023-04-15}
+- [Corretto] Pulizia codice
+- [Corretto] Controllo esecuzione codice
+- [Corretto] Fastidioso bug lettura prezzo chia su file ed esecuzione dell' API python
+
+:::: Server 0.01.12 {2023-04-15} ::::
+- [Aggiunto] Form lato server e configurazione in ascolto
+- [Aggiunto] Server start e stop
+- [Aggiunto] Connesso client e comunicazione di semplici messaggi tra i due (server in "ascolto")
+- [Corretto] Corretto bug per il quale il server si bloccava se nessun client era connesso in caso di stop del server
+
+Versione 1.0.32 {2023-04-12}
+- [Aggiunto] Controllo sull'esistenza del file payment.log per successiva lettura e controllo
+- [Aggiunto] Controllo sullo stato della transazione, se risulta positivo "SUCCESS" apposto, se diverso ferma il programma senza salvare i nuovi dati
+- [Corretto] Incremeto dello stato del contatore "Credito esaurito" - veniva aumentato a caso
+- [Corretto] Nel caso in cui il daily payment venga incrementato, il salvataggio del credito su database era errato (daily + tantum)
+
+Versione 1.0.27 {2023-04-11}
+- [Aggiunto] aggiunto Spazio visibile per lo status programma ed eventuali errori da risolvere
+- [Aggiunto] Sistemata la stampa sulla Textbox, pulizia e controllo testi
+- [Aggiunto] Se la check box .py API è disattivata il porogramma si ferma, nessuna modifica viene applicata al database
+- [Aggiunto] In caso di manipolazione del pagamento giornaliero (€) il dato da database rimarrà quello originale, ma il calcolo verrà eseguito dal nuovo dato
+- [Grave]    Corretto errore che impostava il valore del pagamento giornaliero (€) pari al credito originale...
+- [Dati]     Aumento rapporto per incremento daily reward (€) [1.9 --> 2.11]
+- [Corretto] Bug il quale non permetteva la lettura del file contenente il prezzo di chia
+- [Corretto] Errore che impediva la lettura del prezzo dato il percorso errato
+- [Corretto] Transaction id (-tx) restituiva sempre la stessa transazione, il dato non veniva mai aggiornato
+- [Corretto] Corretto il testo del corpo dell'email ed aggiunto il titolo "cloud mining"
+- [Corretto] Passaggio tantum dal valore [0.00 --> 0.0000] e non viene più aggiunto al daily payment (€) ma mantenuto nel Database
+- [Corretto] Ora la tantum viene applicata ai calcoli solamente quando si deve eseguire un pagamento
+
+Versione 1.0.11 {2023-04-10}
+- [Corretto] Svariati bug
+- [Corretto] Pagamento cmd che risultava incompleto
+- [Corretto] Creazione dell'email, risultava imparziale
+- [Corretto] Percorsi non trovati - file non letti
+- [Bug]		 Se il file contenente il prezzo chia non esiste, non verrà richiamato l'api per ricrearlo (BUG ANCORA PRESENTE)
+- [Test]     Test reali effettuati tutto oks... 1.0.0 arrivooooo
+- [Test]     Transazioni eseguite su rete chia andate a buon fine senza errori
+
+Versione 0.90.92 {2023-04-9}
+- [Aggiunto] Form transazioni
+- [Aggiunto] refresh transazioni
+- [Aggiunto] Auto-Creazione dati di transazione e relativi percorsi
+- [Aggiunto] Possibilità di scegliere quale set di transazioni da caricare
+- [Aggiunto] Contatore che cotrolla se i cretiti pari a 0 sono uguali al numero totale degli utenti
+- [Corretto] Metodo di salvataggio transazioni .xml con relative cartelle identificative
+- [Corretto] bug vari ed errori
+- [Corretto] Caricamento transazioni
+- [Corretto] bug per il quale il bonus iniziale era pari al 10% anche se impostato a 0
+- [Corretto] Aggiunto refresh bonus nel pulsante refresh e nel load del form
+- [Corretto] Bug che manteneva il ciclo attivo se tutti gli utenti avevano 0 come credito
+- [Corretto] bug che impediva l'esecuzione dei pagamenti se poco prima i crediti risultavano apri a 0
+- [Corretto] Bug che impediva l'esecuzione di più di due cicli a seconda del contatote scelto
+- [Corretto] Errore quando si cercava di eseguire l'API quando i percorsi non sono corretti o di nuova installazione
+
+Versione 0.18.22 {2023-04-08}
+- [Corretto] Bug esecuzione lettura file python.exe
+- [Corretto] mancata esecuzione del file .py nel caso in cui il file .txt esiste
+- [Corretto] Errori nella lettura dei percorsi Chia price - Percorso plot - Chia API
+- [Aggiunto] Ottenimento stato transazione (Successo o fallito) da integrare le conseguenze in caso di successo o fallimento
+- [Aggiunto] Ottemineto transaction id (-tx) dalla transazione che verrà inclusa in un blocco
+
+Versione 0.18.03 {2023-03-29}
+- [Corretto] Sistema di impostazioni, è possibile ora cambiare a piacimento il percorso
+- [Aggiunto] Sistema di copia dei file necessari da cloud, trova già il percorso giusto se da impostazioni è tutto okss
+- [Aggiunto] Prima GUI del client
+
+Versione 0.16.38 {2023-03-26}
+- [Aggiunto] Cicli di pagamento ogni 24H
+- [Aggiunto] Salvataggio variabili nelle impostazioni del programma !!! <-- Da ricontrollare
+- [Aggiunto] Possibilità di impostare il percorso database ovunque si voglia... (alcuni file devono essere copiati a mano) !!! <-- Da ricontrollare
+- [Aggiunto] Incremento daily_payment se il rapporto tra credito_rimasto e daily_payment è entro un certo range
+- [Corretto] Sistemato parzialmente sistema di salvataggi percorsi
+- [Altro]    Snellimento codice e percorsi
+- [Altro]    Snellito e sistemato cmd "un solo percorso necessario da impostare a mano"
+- [Info]     Sistema notifica email (aggiunti dati)
+- [Info]     Sistema log (Aggiunti dati)
+- [Aggiunto] Sistemato file .cmd e relativi file con VS22
+- [Corretto] Sistema impostazioni programma (80%)
+- [Altro]    Riorganizzato il codice
+- [Finish]   Cmd complettao, necessita della modifica di 1 percorso per funzionare, il resto se lo trova
+- [Aggiunto] Creazione form tutorial (prima bozza)
+
+Versione 0.14.24 {2023-03-25}
+- [Corretto] Formato salvataggio dati file .xml da 0.0 --> 0,0
+- [Corretto] Calcolo e caricamento dati da database nel giusto formato
+- [Aggiunto] Calcolo credito last ed aggiornamento file xml quando viene effettuato pagamento
+- [Aggiunto] Load_Payment(Button) Controllo prezzo chia se inferiore a 20€ alla pressione del bottone Controllo [1]
+- [Aggiunto] Controllo per la presenza di almeno un file .xml nel database
+- [Aggiunto] Controllo credito cliente uguale a 0€
+- [Aggiunto] Sistema di pagamento per tutti i clienti nel database
+- [Altro]    Snellimento codice nel possibile
+- [Bug]      Corretto bug il quale, per il secondo utente, non avvenivano pagamenti
+
+Versione 0.13 {2023-03-15}
+- [Aggiunto] possibilità di on/off di Pagamento .cmd
+- [Aggiunto] possibilità di on/off di API .py
+- [Aggiunto] Assegnazione percorsi "path" da text box ... con corretta sintassi
+- [Aggiunto] Creazione file per pagamento .cmd
+- [Aggiunto] Creazione testo e corpo dell'email sul file .cmd
+
+Versione 0.12 {2023-03-14}
+- [Aggiunto] possibilità di effettuare pagamento per ID specifico
+- [Aggiunto] processo payment async // parallelo (utilizza solo un numero di threads necessari - tiene conto dei processi cpu possibili e max)
