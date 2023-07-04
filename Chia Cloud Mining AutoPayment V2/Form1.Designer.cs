@@ -61,6 +61,7 @@
             this.text_Mail_Sender = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.CB_Rendimento = new System.Windows.Forms.CheckBox();
             this.check_box_Chia_py = new System.Windows.Forms.CheckBox();
             this.check_box_Cmd = new System.Windows.Forms.CheckBox();
             this.btn_Load_Payment = new System.Windows.Forms.Button();
@@ -96,6 +97,8 @@
             this.lbl_timer = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.text_Referal = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -315,6 +318,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.text_Referal);
+            this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.text_Address_Receiver);
             this.groupBox3.Controls.Add(this.label11);
@@ -417,6 +422,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.CB_Rendimento);
             this.groupBox6.Controls.Add(this.check_box_Chia_py);
             this.groupBox6.Controls.Add(this.check_box_Cmd);
             this.groupBox6.Location = new System.Drawing.Point(207, 244);
@@ -424,6 +430,16 @@
             this.groupBox6.Size = new System.Drawing.Size(167, 75);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
+            // 
+            // CB_Rendimento
+            // 
+            this.CB_Rendimento.AutoSize = true;
+            this.CB_Rendimento.Location = new System.Drawing.Point(88, 42);
+            this.CB_Rendimento.Name = "CB_Rendimento";
+            this.CB_Rendimento.Size = new System.Drawing.Size(75, 17);
+            this.CB_Rendimento.TabIndex = 11;
+            this.CB_Rendimento.Text = "3% reward";
+            this.CB_Rendimento.UseVisualStyleBackColor = true;
             // 
             // check_box_Chia_py
             // 
@@ -718,6 +734,7 @@
             this.comboBox1.Size = new System.Drawing.Size(166, 21);
             this.comboBox1.Sorted = true;
             this.comboBox1.TabIndex = 20;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -762,9 +779,9 @@
             // btn_clear
             // 
             this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.Location = new System.Drawing.Point(205, 481);
+            this.btn_clear.Location = new System.Drawing.Point(205, 476);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(58, 30);
+            this.btn_clear.Size = new System.Drawing.Size(58, 35);
             this.btn_clear.TabIndex = 27;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = true;
@@ -772,14 +789,33 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.SeaGreen;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(318, 481);
+            this.button1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.button1.Location = new System.Drawing.Point(267, 476);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 30);
+            this.button1.Size = new System.Drawing.Size(107, 35);
             this.button1.TabIndex = 28;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Mempool";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // text_Referal
+            // 
+            this.text_Referal.Location = new System.Drawing.Point(104, 32);
+            this.text_Referal.Name = "text_Referal";
+            this.text_Referal.Size = new System.Drawing.Size(63, 20);
+            this.text_Referal.TabIndex = 10;
+            this.text_Referal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(102, 16);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 13);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Invito Referal";
             // 
             // Form1
             // 
@@ -907,6 +943,9 @@
         private System.Windows.Forms.Label lbl_timer;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox CB_Rendimento;
+        private System.Windows.Forms.TextBox text_Referal;
+        private System.Windows.Forms.Label label17;
     }
 }
 

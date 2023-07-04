@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.text_Mail_Code = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.text_wallet_invio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.text_percorso_database = new System.Windows.Forms.TextBox();
@@ -47,12 +50,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.text_Mail_Code = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox5
@@ -79,6 +79,36 @@
             this.groupBox5.Size = new System.Drawing.Size(658, 284);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.text_Mail_Code);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.text_wallet_invio);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(429, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(228, 103);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            // 
+            // text_Mail_Code
+            // 
+            this.text_Mail_Code.Location = new System.Drawing.Point(3, 64);
+            this.text_Mail_Code.Name = "text_Mail_Code";
+            this.text_Mail_Code.Size = new System.Drawing.Size(220, 20);
+            this.text_Mail_Code.TabIndex = 21;
+            this.text_Mail_Code.Text = "thechannelofadlos@gmail.com:bekflkuvqvahoxcv";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Email Code";
             // 
             // text_wallet_invio
             // 
@@ -183,7 +213,7 @@
             this.text_Python_Path.Name = "text_Python_Path";
             this.text_Python_Path.Size = new System.Drawing.Size(646, 20);
             this.text_Python_Path.TabIndex = 9;
-            this.text_Python_Path.Text = "C:\\Users\\TheCh\\AppData\\Local\\Programs\\Python\\Python311\\python.exe";
+            this.text_Python_Path.Text = "C:\\Users\\TheCh\\AppData\\Local\\Programs\\Python\\Python39\\python.exe";
             // 
             // label15
             // 
@@ -253,36 +283,6 @@
             this.salvaToolStripMenuItem.Text = "Salva";
             this.salvaToolStripMenuItem.Click += new System.EventHandler(this.salvaToolStripMenuItem_Click);
             // 
-            // text_Mail_Code
-            // 
-            this.text_Mail_Code.Location = new System.Drawing.Point(3, 64);
-            this.text_Mail_Code.Name = "text_Mail_Code";
-            this.text_Mail_Code.Size = new System.Drawing.Size(220, 20);
-            this.text_Mail_Code.TabIndex = 21;
-            this.text_Mail_Code.Text = "thechannelofadlos@gmail.com:bekflkuvqvahoxcv";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Email Code";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.text_Mail_Code);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.text_wallet_invio);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(429, 7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(228, 103);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            // 
             // Impostazioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,10 +297,10 @@
             this.Load += new System.EventHandler(this.Impostazioni_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

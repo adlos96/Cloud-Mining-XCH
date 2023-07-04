@@ -35,6 +35,7 @@ namespace Chia_Cloud_Mining_AutoPayment_V2
                 XmlNode nodeTantum = DocumentoXml.DocumentElement.SelectSingleNode("/Cliente/Tantum");
                 XmlNode nodeFee = DocumentoXml.DocumentElement.SelectSingleNode("/Cliente/Fee");
                 XmlNode nodeBoolAPY = DocumentoXml.DocumentElement.SelectSingleNode("/Cliente/BoolAPY");
+                XmlNode nodeReferal = DocumentoXml.DocumentElement.SelectSingleNode("/Cliente/Referal");
 
                 //Calcola il valore delle variabili credito ed investimento
                 double lettura_Investimento = 0;
@@ -46,7 +47,7 @@ namespace Chia_Cloud_Mining_AutoPayment_V2
                 //Carica i seguenti elementi nella griglia ... Db
                 string[] nuovariga = {idContatto, nodeUtente.InnerText, nodeInvestimento.InnerText, nodeCredito.InnerText, nodeCredito_Rimanente.InnerText,
                     nodeDaily_Reward.InnerText, nodeEmail.InnerText, nodeIndirizzo_Xch.InnerText, nodeBonus.InnerText, nodeTantum.InnerText, nodeFee.InnerText,
-                    nodeBoolAPY.InnerText};
+                    nodeBoolAPY.InnerText, nodeReferal.InnerText };
                 Database_db.Rows.Add(nuovariga);
 
                 lbl_Totale_EURO_Investiti.Text = "Capitale: " + _investimento;

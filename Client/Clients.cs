@@ -23,6 +23,11 @@ namespace Chia_Cloud_Mining_AutoPayment_V2
             lbl_data.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lbl_Numero_Plot_Minimo.Text = trackBar_Plot.Minimum.ToString();
             lbl_Numero_Plot_Max.Text = trackBar_Plot.Maximum.ToString();
+            Connetti_GB.Visible = false;
+            lbl_plot_manuali.Visible = false;
+            txt_plot_Manuale.Visible = false;
+            btn_Conferma.Visible = false;
+            Connetti_GB.Visible = false;
         }
 
         private void connectButton_Click(object sender, EventArgs e)
@@ -197,6 +202,7 @@ namespace Chia_Cloud_Mining_AutoPayment_V2
             txt_AddresXCH.Visible = false;
             btn_Invio_Address.Visible = false;
             gbox_Plot.Visible = true;
+            Connetti_GB.Visible = true;
         }
 
         private void trackBar_Plot_Scroll(object sender, EventArgs e)
@@ -216,6 +222,27 @@ namespace Chia_Cloud_Mining_AutoPayment_V2
                 trackBar_Plot.Value = Convert.ToInt32(lbl_Numero_Plot.Text);
             }
             
+        }
+
+        private void Manuale_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Manuale_checkbox.Checked == false)
+            {
+                lbl_plot_manuali.Visible = false;
+                txt_plot_Manuale.Visible = false;
+                btn_Conferma.Visible = false;
+            }
+            if (Manuale_checkbox.Checked == true)
+            {
+                lbl_plot_manuali.Visible = true;
+                txt_plot_Manuale.Visible = true;
+                btn_Conferma.Visible = true;
+            }
+        }
+
+        private void connettiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Connetti_GB.Visible = true;
         }
     }
 }

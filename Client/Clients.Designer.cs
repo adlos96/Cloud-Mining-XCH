@@ -83,10 +83,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.lbl_plot_manuali = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Conferma = new System.Windows.Forms.Button();
             this.txt_plot_Manuale = new System.Windows.Forms.TextBox();
             this.gbox_Plot = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Connetti_GB = new System.Windows.Forms.GroupBox();
+            this.Manuale_checkbox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -100,7 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Plot)).BeginInit();
             this.gbox_Plot.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.Connetti_GB.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Work
@@ -406,6 +407,7 @@
             this.connettiToolStripMenuItem.Name = "connettiToolStripMenuItem";
             this.connettiToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.connettiToolStripMenuItem.Text = "Connetti";
+            this.connettiToolStripMenuItem.Click += new System.EventHandler(this.connettiToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -592,6 +594,7 @@
             // 
             // connectButton
             // 
+            this.connectButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.connectButton.Location = new System.Drawing.Point(209, 22);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(92, 33);
@@ -610,6 +613,7 @@
             // 
             // disconnectButton
             // 
+            this.disconnectButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.disconnectButton.Location = new System.Drawing.Point(209, 59);
             this.disconnectButton.Name = "disconnectButton";
             this.disconnectButton.Size = new System.Drawing.Size(92, 33);
@@ -620,6 +624,7 @@
             // 
             // sendButton
             // 
+            this.sendButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.sendButton.Location = new System.Drawing.Point(120, 226);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(83, 33);
@@ -650,6 +655,7 @@
             // 
             // btn_Test
             // 
+            this.btn_Test.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Test.Location = new System.Drawing.Point(209, 145);
             this.btn_Test.Name = "btn_Test";
             this.btn_Test.Size = new System.Drawing.Size(92, 33);
@@ -761,23 +767,23 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(31, 94);
+            this.label7.Location = new System.Drawing.Point(54, 97);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(137, 19);
             this.label7.TabIndex = 28;
             this.label7.Text = "inserimento manuale";
             // 
-            // button1
+            // btn_Conferma
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(42, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Conferma";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_Conferma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Conferma.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_Conferma.Location = new System.Drawing.Point(42, 164);
+            this.btn_Conferma.Name = "btn_Conferma";
+            this.btn_Conferma.Size = new System.Drawing.Size(75, 33);
+            this.btn_Conferma.TabIndex = 29;
+            this.btn_Conferma.Text = "Conferma";
+            this.btn_Conferma.UseVisualStyleBackColor = true;
+            this.btn_Conferma.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txt_plot_Manuale
             // 
@@ -793,8 +799,9 @@
             // 
             // gbox_Plot
             // 
+            this.gbox_Plot.Controls.Add(this.Manuale_checkbox);
             this.gbox_Plot.Controls.Add(this.txt_plot_Manuale);
-            this.gbox_Plot.Controls.Add(this.button1);
+            this.gbox_Plot.Controls.Add(this.btn_Conferma);
             this.gbox_Plot.Controls.Add(this.label7);
             this.gbox_Plot.Controls.Add(this.lbl_plot_manuali);
             this.gbox_Plot.Controls.Add(this.label18);
@@ -811,23 +818,34 @@
             this.gbox_Plot.Text = "Plot";
             this.gbox_Plot.Visible = false;
             // 
-            // groupBox3
+            // Connetti_GB
             // 
-            this.groupBox3.Controls.Add(this.btn_Test);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.messageTextBox);
-            this.groupBox3.Controls.Add(this.sendButton);
-            this.groupBox3.Controls.Add(this.disconnectButton);
-            this.groupBox3.Controls.Add(this.logTextBox);
-            this.groupBox3.Controls.Add(this.connectButton);
-            this.groupBox3.Controls.Add(this.portTextBox);
-            this.groupBox3.Controls.Add(this.ipAddressTextBox);
-            this.groupBox3.Location = new System.Drawing.Point(152, 151);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(309, 292);
-            this.groupBox3.TabIndex = 32;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.Connetti_GB.Controls.Add(this.btn_Test);
+            this.Connetti_GB.Controls.Add(this.label17);
+            this.Connetti_GB.Controls.Add(this.messageTextBox);
+            this.Connetti_GB.Controls.Add(this.sendButton);
+            this.Connetti_GB.Controls.Add(this.disconnectButton);
+            this.Connetti_GB.Controls.Add(this.logTextBox);
+            this.Connetti_GB.Controls.Add(this.connectButton);
+            this.Connetti_GB.Controls.Add(this.portTextBox);
+            this.Connetti_GB.Controls.Add(this.ipAddressTextBox);
+            this.Connetti_GB.ForeColor = System.Drawing.SystemColors.Control;
+            this.Connetti_GB.Location = new System.Drawing.Point(152, 151);
+            this.Connetti_GB.Name = "Connetti_GB";
+            this.Connetti_GB.Size = new System.Drawing.Size(309, 292);
+            this.Connetti_GB.TabIndex = 32;
+            this.Connetti_GB.TabStop = false;
+            this.Connetti_GB.Text = "groupBox3";
+            // 
+            // Manuale_checkbox
+            // 
+            this.Manuale_checkbox.AutoSize = true;
+            this.Manuale_checkbox.Location = new System.Drawing.Point(33, 99);
+            this.Manuale_checkbox.Name = "Manuale_checkbox";
+            this.Manuale_checkbox.Size = new System.Drawing.Size(15, 14);
+            this.Manuale_checkbox.TabIndex = 31;
+            this.Manuale_checkbox.UseVisualStyleBackColor = true;
+            this.Manuale_checkbox.CheckedChanged += new System.EventHandler(this.Manuale_checkbox_CheckedChanged);
             // 
             // Clients
             // 
@@ -835,7 +853,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(848, 508);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.Connetti_GB);
             this.Controls.Add(this.gbox_Plot);
             this.Controls.Add(this.btn_Invio_Address);
             this.Controls.Add(this.label4);
@@ -868,8 +886,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Plot)).EndInit();
             this.gbox_Plot.ResumeLayout(false);
             this.gbox_Plot.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.Connetti_GB.ResumeLayout(false);
+            this.Connetti_GB.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -932,9 +950,10 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lbl_plot_manuali;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Conferma;
         private System.Windows.Forms.TextBox txt_plot_Manuale;
         private System.Windows.Forms.GroupBox gbox_Plot;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox Connetti_GB;
+        private System.Windows.Forms.CheckBox Manuale_checkbox;
     }
 }

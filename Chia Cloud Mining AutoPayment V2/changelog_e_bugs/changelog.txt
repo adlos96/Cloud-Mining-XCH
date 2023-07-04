@@ -1,4 +1,163 @@
-﻿Versione 1.2.13 {2023-05-17}
+﻿Versione 1.2.22 {2023-07-03}
+- [Aggiunto] Quando un refeal viene aggiunto si crea anche una transazione vuota con i valori aggiunti dal referal
+- [Corretto] Corretto database per ignorare le transazioni referal
+ -[Corretto] Altre robe che in sto fine settimana non ricordo ^.^
+
+Versione 1.2.21 {2023-06-30}
+- [Aggiunto] Nuovo software stand-alone per eseguire i pagamenti tra il wallet master ed il wallet del cloud mining...
+			 Il software effettua transazioni in loop (es 0.25 | 0.1 xch) avendo la disponibilità di credito per gestire le transazioni dei clienti
+- [TEST]	 Inizio test 15 gg del core, sistema pagamenti, Mempool, referal system, nuova API
+
+Versione 1.2.20b5 {2023-06-27}
+- [Corretto] Il bonus referal veniva applicato alla cazzo di cane, risolto le formule e le dimenticanze
+- [Corretto] Ora lo slippage viene applicato in tutte le conversioni
+- [Corretto] La mempool tendeva a bloccarsi, cercava di aprire file inesistenti o tentava di sovrascriverne altri
+-			 Interrompo i test causa mancanza fondi... chia purtroppo tende a bloccare più xch del dovuto per confermare una transazione... appena ottengo altri fondi ritesto...
+
+0.000950853731 pending su 0.000015557425 (rapporto di | 61.qualcosa)!!!! NON HA SENSO ....
+0.002299481116 pending su 0.000031114852 
+
+Versione 1.2.20b4 {2023-06-27}
+- [Corretto] Appicazione del bonus ref, ora viene applicato sia al "credito_residuo" che al "credito"
+- [Corretto] Se i pagamenti sono attivi, il nuovo utente aggiunto non verrà mai pagato fino al riavvio dei pagamenti
+- [Corretto] La mempool quando viene eiavviato il programma si bloccava perchè tentava di aprire il primo file "1_Pending" anche se i controlli puntavano direttamente al file "10_Pending"
+- [Corretto] Modificato il campo id delle transazioni con il numero transazione
+- [Dati]	 Attualmente il loop pagamenti è in anticipo di (3.31s | 24h) (26102 days)
+-			 Ricontrollare primo timer mempool, è messo a caso... il primo ciclo, è ok, nel secondo non viene minimamente considerato... sembra corretto...
+- [ERRORE!!] Ad un certo punto il numero blocco risulta 0 (Mempool) ... si è corretto da solo...
+- [ERRORE!!] Ad un certo punto la mempool tenta di aprire un file in pending (1_Pending) ci sono 11
+ 
+Versione 1.2.20b3 {2023-06-27}
+- [Corretto] Dimenticanza, il database utente veniva salvato in modo errato dopo la manipolazione
+- [Corretto] Tempo timer attesa reimpostato 24h (200ms -> 75 ms)
+- [Corretto] Bug il quale creava un doppione di tutte le transazioni (1_pending - 1_Confirmed .. | 2_Pending - 2_Confirmed)
+- [Corretto] Errore di dichiarazione variabili prezzo in int e non double
+- [Test]	 Controllo corretta esecuzione transazioni
+- [Test]	 Controllo corretta esecuzione Mempool
+- [Test]	 Controllo lettura prezzo chia (Coingecko)
+- [Test]	 Controllo corretta esecuzione referal code
+- [Test]	 Controllo corretto accredito del bonus ref e corretto pagamento dello stesso
+- [Test]	 Controllo corretta esecuzione di pagamenti multipli (Più utenti iscritti)
+- [Test]	 Ridotto i tempi per effettuare 10 transazioni all'ora (Mempool 2 min + 8 min)
+
+Versione 1.2.20b2 {2023-06-26}
+- [Corretto] aggiunto un controllo per i file "x_Pending"
+
+Versione 1.2.20b1 {2023-06-26}
+- [Corretto] Mancata creazione file log per ottenimento txhash e numero blocco
+- [Corretto] Impostato come metodo async il bottone della mempool, con oscuramento bottone fino al completamento della funzione
+
+Versione 1.2.20b {2023-06-26}
+- [Aggiunto] Ottenimento prezzo API dal coingecko.com
+- [Corretto] In primis si tenta l'utilizzo del file python (tramite url) per la lettura del prezzo, se fallisce si accede all'API
+
+Versione 1.2.20 {2023-06-21}
+- [Aggiunto] Sistema di referal code che permette di invitare un'amico, ottenendo un bonus dal suo deposito (12.5%)
+- [Aggiunto] Sistema che cerca tra tutti gli utenti, l'utente proprietario del referal code
+- [Aggiunto] Mempool, Controllo che la variabile "block_number" non sia vuota
+- [Aggiunto] Mempool, Controllo che la variabile "txn_hash" non sia vuota
+- [Corretto] Possibilità di poter cambiare i bonus rendita "base" e "plus" con un valore con la virgola
+- [Corretto] Mempool, in caso di database transazioni vuoto il ciclo non finiva mai
+- [Corretto] Mempool, sistema di applicazione "Giorni senza transazioni" nel codice
+- [Corretto] Calcolo applicazione slippage nel rendimento giornaliero
+- [Dati]	 Inserito slippage in riduzione nel calcolo della rendita, "base" e "plus"
+- [Dati]	 Cambiato importo rendita "base" (2% --> 1.75%)
+- [Dati]	 Cambiato importo rendita "plus" (3% --> 2.75%)
+-			 Manca da aggiungere sistema di generazione automatico ref code (basato sull'indirizzo xch ??), può essere inserito manualmente
+- [Release]  Ci prepariamo alla rpima serie di test per eseguire un software indipendente e per la migrazione vecchi utenti
+- []Test transazioni e mempool 1/4 utenti (20 transazioni)
+- []Test aggiunta utenti con referal (8 utenti - add 1 su 24h [8 giorni] )
+
+Versione 1.2.1.23 {2023-06-20}
+- [Aggiunto] Controllo che impedisce l'esecuzione delle API se i percorsi sono vuoti (evita crash)
+- [Aggiunto] Sistema ottenimento Block_Number e Transaction_Hash
+- [Corretto] Impostazioni programma - puoi specificare il percorso dove creerà le cartelle e le copie necessarie
+- [Corretto] Migliorata estrazione del -tx in Csharp 
+- [Corretto] Errore di percorso lettura file
+- [Corretto] File python "txn_hash.py"
+- [Corretto] File da copiare da drive, un file aveva un nove diverso dall'originale
+- [Corretto] Caricamento Transaction_ID nel file cmd (Risultava il caricamento da un percorso errato)
+- [Test]	 Test funzionamento mempool
+- [Bug]		 Il sistema delle impostazioni va completamente rivisto
+- [Info]     Ora due istanze, se hanno percorsi differenti, dovrebbero poter lavorare in modo indipendente (non testato)
+- [Info]	 Testato programma con solo "wallet" senza la blockchain completa (Testato con 1 stransazione da software)
+
+
+Versione 1.2.1.22 {2023-06-17}
+- [Corretto] Mancata creazione file transazione e blocco del programma causa lentezza inclusione blocco
+- [COrretto] Rimossi relativi codici e file sincronizzazione
+
+Versione 1.2.1.21 {2023-06-14}
+- [Corretto] Corretto bug visualizzaione database utenti
+- [Corretto] Salvataggio database utenti
+- [Corretto] Salvataggio variabile in impostazioni programma
+- [Corretto] Sistema mempool
+- [Corretto] Salvataggio database transazioni
+- [Corretto] Sistema di caricamento e visualizzazione database transazioni
+- [Corretto] Disabilitato secondo controllo conferma transazione (OFF) 
+
+Versione 1.2.1.20 {2023-06-14}
+- [Aggiunto] Sistema di controllo Mempool per le transazioni eseguite
+- [Aggiunto] Controllo che si attiva se verifica che numero di giorni senza transazione supera le 48h (dopo 48h chiude la Mempool con un avviso)
+- [Aggiunto] Controllo verifica transazioni saltate (Transazioni già confermate)
+- [Aggiunto] Controllo per il reset dei contatori in caso di avvenuta transazione
+- [Aggiunto] Sistema loop infinito per eseguire la Mempool
+- [Aggiunto] Sistema Referal nel database (Futura implementazione)
+- [Corretto] Cose minopri che non ricordo ^.^
+
+Versione 1.2.1.19b2 {2023-06-13}
+- [Corretto] Sistema esecuzione mempool
+- [Corretto] Problema ripetizione loop mempool
+- [Bug]		 Ricontrollare codice richiamo python per ottenimento block_number e txn_hash
+
+Versione 1.2.1.19b1 {2023-06-13}
+- [Aggiunto] Sistema alternativo "mempool" per le transazioni in Pending --> Confirmed (prima versione)
+- [Aggiunto] Rivisto sistema database utenti
+- [Aggiunto] Rivisto sistema database transazioni
+- [Aggiunto] Sistema referal database utenti (prima bozza, sistema non integrato)
+- [Aggiunto] Sistema ottenimento numero blocco transazione
+- [Aggiunto] Sistema ottenimento transaction hash 
+
+Versione 1.2.1.19b {2023-06-10}
+- [Aggiunto] Aggiunto sistema di rendimenti base - plus (Rendita - Rendita_Plus)
+- [Corretto] Soglia di attivazione rendimenti (plus = 1250 | 3% normal = 0 | 2%)
+-			 Bozza primo test ottenimento -txn hash e numero blocco transazione, 
+
+Versione 1.2.1.19 {2023-06-07}
+- [Aggiunto] Secondo controllo per la conferma dell'avvenuta inclusione della transazione nella mempool.. in attesa di essere insertita in un blocco...
+
+Versione 1.2.1.18b {2023-06-06}
+- [Aggiunto] Possibilità di applicare i rendimenti ad un singolo utente (Default = false)
+- [Aggiunto] Controllo che evita la creazione di file vuoti
+- [Corretto] Non veniva creato il file di crash perchè mancava la cartella nel percorso
+- [Corretto] Ora il file Autopayment.cmd trova in automatico il percorso delle cartelle del programma e prende i dati necessari
+- [Corretto] Errata visualizzazione dell'importo di chia da mandare, veniva espresso in notazione scentifica
+- [Corretto] Calcolo importo chia da pagare
+- [Corretto] Crash che necessitava la chiusura del programma se una transazione non andava a buon fine
+- [Corretto] Sistemato sistema calcolo ritardo loop, non contava i crediti esauriti, per questo il tempo di attesa poteva essere sballato
+- [Testato]  Controllo effettiva memorizzazione in mempool della transazione
+- [Testato]  Controllo correttezza dei dati che vengono salvati nel database/transazioni - In caso di transazione (failed) i dati non vengono aggiornati dal database
+
+Versione 1.2.1.18 {2023-06-06}
+- [Dati]	 Database aggiornato, vecchi database non più compatibili
+
+Versione 1.2.18 {2023-06-05}
+- [Aggiunto] Sistema di swap automatico interno (XCH/EURO - EURO/USDT)
+- [Aggiunto] % di slippage per eventuali swap manuali ed automatici (0.5%)
+- [Aggiunto] Controllo per il prezzo di chia, tale varore non può essere vuoto, e non è manulamnete modificabile
+- [Corretto] Ridefinito sistema di impostazioni/salvataggio per eventuali espansioni del codice
+- [Corretto] Sistema copia file critici aggiornato per il nuovo cambio (EURO/USDT)
+- [Testato]  Sistema identificativo per futuro upload dati cliente Server --> Client (ID = Wallet XCH)
+- [Codice]	 Pulizia codice da ripetizioni e punti console
+- [Bozza]	 lettura_transazioni()
+- [Bozza]    passaggio_FileXML()
+- [Rimosso]  Sistema tutoial Core
+
+Versione 1.2.15 {2023-06-03}
+- [Corretto] Fastidioso bug che bloccava il programma quando, aggiunto un utente, si tentava d'avviare i pagamenti senza refreshare la gui
+- [Aggiunto] Creazione di file "log" in caso di fallimento transazione [Data|Utente|ID]
+
+Versione 1.2.14 {2023-05-17}
 - [Aggiunto] Possibilità di applicare il rendimento manuale anche se il programma non lo permette...
 - [Corretto] Corretta struttura database - Non è più compatibile con le vecchie versioni
 

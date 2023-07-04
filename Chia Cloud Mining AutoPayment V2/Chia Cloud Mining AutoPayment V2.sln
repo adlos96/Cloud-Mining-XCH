@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chia Cloud Mining AutoPayme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client.csproj", "{8AC259E4-72C5-45F0-BA1C-35D7D01F5492}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi XCHPY", "..\Multi XCHPY\Multi XCHPY.csproj", "{777CEBE0-357C-4A8C-9C91-73DE5045C96E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8AC259E4-72C5-45F0-BA1C-35D7D01F5492}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AC259E4-72C5-45F0-BA1C-35D7D01F5492}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AC259E4-72C5-45F0-BA1C-35D7D01F5492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777CEBE0-357C-4A8C-9C91-73DE5045C96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777CEBE0-357C-4A8C-9C91-73DE5045C96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777CEBE0-357C-4A8C-9C91-73DE5045C96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777CEBE0-357C-4A8C-9C91-73DE5045C96E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

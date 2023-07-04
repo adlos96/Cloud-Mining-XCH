@@ -49,6 +49,7 @@
             this.ColTantum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBoolAPY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColReferal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Database_db)).BeginInit();
             this.barra_stato.SuspendLayout();
             this.SuspendLayout();
@@ -75,13 +76,14 @@
             this.ColBonus,
             this.ColTantum,
             this.ColFee,
-            this.colBoolAPY});
+            this.colBoolAPY,
+            this.ColReferal});
             this.Database_db.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Database_db.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(45)))), ((int)(((byte)(59)))));
             this.Database_db.Location = new System.Drawing.Point(0, 24);
             this.Database_db.Name = "Database_db";
             this.Database_db.ReadOnly = true;
-            this.Database_db.Size = new System.Drawing.Size(970, 367);
+            this.Database_db.Size = new System.Drawing.Size(1073, 367);
             this.Database_db.TabIndex = 0;
             // 
             // barra_stato
@@ -94,7 +96,7 @@
             this.toolStripStatusLabel2});
             this.barra_stato.Location = new System.Drawing.Point(0, 391);
             this.barra_stato.Name = "barra_stato";
-            this.barra_stato.Size = new System.Drawing.Size(970, 22);
+            this.barra_stato.Size = new System.Drawing.Size(1073, 22);
             this.barra_stato.TabIndex = 1;
             this.barra_stato.Text = "statusStrip1";
             // 
@@ -133,7 +135,7 @@
             // 
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(970, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1073, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -149,7 +151,7 @@
             this.ColUser.HeaderText = "Utente";
             this.ColUser.Name = "ColUser";
             this.ColUser.ReadOnly = true;
-            this.ColUser.Width = 80;
+            this.ColUser.Width = 75;
             // 
             // ColInvestimento
             // 
@@ -210,18 +212,27 @@
             this.ColFee.HeaderText = "Fee";
             this.ColFee.Name = "ColFee";
             this.ColFee.ReadOnly = true;
+            this.ColFee.Width = 97;
             // 
             // colBoolAPY
             // 
-            this.colBoolAPY.HeaderText = "APY";
+            this.colBoolAPY.HeaderText = "Resa";
             this.colBoolAPY.Name = "colBoolAPY";
             this.colBoolAPY.ReadOnly = true;
+            this.colBoolAPY.Width = 40;
+            // 
+            // ColReferal
+            // 
+            this.ColReferal.HeaderText = "Referal";
+            this.ColReferal.Name = "ColReferal";
+            this.ColReferal.ReadOnly = true;
+            this.ColReferal.Width = 52;
             // 
             // Database
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 413);
+            this.ClientSize = new System.Drawing.Size(1073, 413);
             this.Controls.Add(this.Database_db);
             this.Controls.Add(this.barra_stato);
             this.Controls.Add(this.menuStrip1);
@@ -260,5 +271,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTantum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColFee;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBoolAPY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColReferal;
     }
 }
