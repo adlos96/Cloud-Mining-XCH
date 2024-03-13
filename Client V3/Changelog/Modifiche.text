@@ -1,0 +1,12 @@
+Versione ???? {2023-08-22}
+- [Corretto] Bug al primo avvio se si cliccava in login protocol, il client crashava
+- [Corretto] Ridimensionamento form1 per la registrazione / login al software
+- [Corretto] Form payment, ora quando viene selezionata una determinata chain il logo della chain viene modificata in tempo reale
+- [Corretto] Invio dati al server per il calcolo del prezzo dei plot selezionati
+- [Corretto] Label per la visualizzazione del form corrente
+- []
+- [Chain]	 La chain TRC-20 non è più supportata, ma ancora visibile
+- [Aggiunto] Nuova chain "Cronos" per effettuare il pagamento in USDT
+- [Aggiunto] Indirizzi USDT per le chain (Cronos, ERC-20, Poligon)
+
+- Altre correzioni e/o modifiche che non ricordo ^.^
